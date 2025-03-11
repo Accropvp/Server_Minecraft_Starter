@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+  }
+
+#Search_Server {
+    background-image: url('css/search_icon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 50%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+}
+
+#Minecraft_Server_List {
+    height:200px; width:50%;
+    overflow:hidden; overflow-y:scroll;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#Minecraft_Server_List li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
+}
+
+#Minecraft_Server_List li a:hover:not(.header) {
+    background-color: #eee;
+}
+
+.button{
+    border: 1px outset black;
+    background-color: grey;
+    height:50px;
+    width:100px;
+    cursor:pointer;
+    color : black;
+}
+
+.start_button {
+    border: 1px outset black;
+    background-color: lightgreen;
+    height:50px;
+    width:100px;
+    cursor:pointer;
+}
+.start_button:hover {
+    background-color: green;
+}
+
+.stop_button {
+    border: 1px outset black;
+    background-color: red;
+    height:50px;
+    width:100px;
+    cursor:pointer;
+}
+
+.stop_button:hover {
+    background-color: darkred;
+}
