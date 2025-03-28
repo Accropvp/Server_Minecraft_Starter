@@ -1,5 +1,5 @@
 <?php
-$username = "accropvp";
+$username = "";
 $serverFile = file_get_contents("server.json");
 $servers = json_decode($serverFile, true);
 

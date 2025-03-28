@@ -1,10 +1,10 @@
 {
-    "folia 1.21.4" :{
-        "tmux session" : "folia_1_21_4",
-        "path" : "Minecraft/server_folia_1.21.4"
+    "server 1" :{
+        "tmux session" : "server_1",
+        "path" : "Minecraft/server_1"
     },
-    "forge 1.12.2 CraftForLife" :{
-        "tmux session" : "server_forge_1_12_2_CraftForLife",
-        "path" : "Minecraft/server_forge_1.12.2_CraftForLife"
+    "server 2" :{
+        "tmux session" : "server_2",
+        "path" : "Minecraft/server_2"
     }
 }
