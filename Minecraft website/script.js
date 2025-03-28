@@ -1,15 +1,12 @@
 var startButton = document.getElementById("start_button")
 var stopButton = document.getElementById("stop_button")
-console.log('test');
 
 function setupServerList(serverList){
     objServerList = JSON.parse(serverList);
     var htmlList = document.getElementById("Minecraft_Server_List");
     htmlList.innerHTML = "";
     for (let server in objServerList) {
-        console.log(server);
-        let readableServer = server.replace("_", " ");
-        htmlList.innerHTML += `<li><a onclick="selectServer('${server}')">${readableServer}</a></li>`;
+        htmlList.innerHTML += `<li><a onclick="selectServer('${server}')">${server}</a></li>`;
     }
 }
 querry("server.json", setupServerList);
@@ -88,7 +85,6 @@ function selectServer(server) {
     document.getElementById('Server_Selected').innerHTML = server;
     var func = function (response) {
         var serverData = JSON.parse(response);
-        console.log(serverData);
         if (serverData["running"] == true) {
             activateStopButton();
         }
@@ -110,7 +106,6 @@ function startServer(){
         return;
     }
     var func = function (response) {
-        console.log(response);
         var serverData = JSON.parse(response);
         if (serverData["error"]) {
             console.error(serverData["error"]);
@@ -150,6 +145,7 @@ function stopServer(){
         switch (serverData["success"]) {
             case -1:
                 console.error("server is already stopped");
+                activateStartButton();
                 break;
             case 0:
                 console.error("server has not stopped successfully");
@@ -166,3 +162,4 @@ function stopServer(){
     querry("main.php?action=stop&server=" + server, func);
 }
 document.getElementById('Server_Selected').innerHTML = getCookie("server");
+selectServer(getCookie("server"));
